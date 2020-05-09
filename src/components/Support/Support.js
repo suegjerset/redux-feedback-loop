@@ -3,8 +3,13 @@ import Comments from '../Comments/Comments';
 
 class Support extends Component {
 
+    componentDidMount() {
+        console.log('in support', this.props);
+    } 
+
     handleClick = () => {
         console.log( 'in handleClick' );
+        this.props.history.push( '/comments' );
     } // end handleClick
     
     render() {
@@ -12,7 +17,7 @@ class Support extends Component {
             <div>
                 <h1>How well are you being supported?</h1>
                 <select name="support" required>
-                    <option value="" disabled selected hidden>Support?</option>
+                    <option value="">--Support?--</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
                     <option value="3">3</option>
@@ -21,7 +26,6 @@ class Support extends Component {
                     <option value="0">0</option>
                 </select>
                 <button onClick={this.handleClick}>NEXT</button>
-                <Comments />
             </div>
         ); // end return
     } // end render

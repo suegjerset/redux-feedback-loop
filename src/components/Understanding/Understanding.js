@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import Support from '../Support/Support';
 
 class Understanding extends Component {
+
+    componentDidMount() {
+        console.log('in understanding', this.props);
+    } 
     
     handleClick = () => {
         console.log( 'in handleClick' );
+        this.props.history.push('/support');
     } // end handleClick
 
     render() {
@@ -12,7 +17,7 @@ class Understanding extends Component {
             <div>
                 <h1>How well are you understanding the content?</h1>
                 <select name="understanding" required>
-                    <option value="" disabled selected hidden>Understanding?</option>
+                    <option value="">--Understanding?--</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
                     <option value="3">3</option>
@@ -21,7 +26,6 @@ class Understanding extends Component {
                     <option value="0">0</option>
                 </select>
                 <button onClick={this.handleClick}>NEXT</button>
-                <Support />
             </div>
         ); // end return
     } // end render

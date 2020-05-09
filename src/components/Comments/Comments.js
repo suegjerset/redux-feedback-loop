@@ -3,8 +3,13 @@ import Review from '../Review/Review';
 
 class Comments extends Component {
 
+    componentDidMount() {
+        console.log('in comments', this.props);
+    } 
+
     handleClick = () => {
         console.log( 'in handleClick' );
+        this.props.history.push ('/review' );
     } // end handleClick
 
     render() {
@@ -14,7 +19,6 @@ class Comments extends Component {
                 <p>Comments</p>
                 <input type="text" placeholder="Comments"></input>
                 <button onClick={this.handleClick}>NEXT</button>
-                <Review />
             </div>
         ); // end return
     } // end render
