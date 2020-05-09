@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Understanding from '../Understanding/Understanding';
+import Comments from '../Comments/Comments';
 
-class Feeling extends Component {
-  
-    handleClick = () =>{
-    console.log( 'in handleClick' );
-  } // end handleClick
+class Support extends Component {
+
+    handleClick = () => {
+        console.log( 'in handleClick' );
+    } // end handleClick
     
     render() {
         return (
             <div>
-                <h1>How are you feeling today?</h1>
-                <select name="feeling" required>
-                    <option value="" disabled selected hidden>Feeling?</option>
+                <h1>How well are you being supported?</h1>
+                <select name="support" required>
+                    <option value="" disabled selected hidden>Support?</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
                     <option value="3">3</option>
@@ -21,10 +21,10 @@ class Feeling extends Component {
                     <option value="0">0</option>
                 </select>
                 <button onClick={this.handleClick}>NEXT</button>
-                <Understanding />
+                <Comments />
             </div>
         ); // end return
     } // end render
 } // end class
 
-export default Feeling;
+export default Support;

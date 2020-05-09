@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import Comments from '../Comments/Comments';
 
-class Supported extends Component {
+class Review extends Component {
     render() {
         return (
             <div>
-                <h1>Supported.js</h1>
-                <Comments />
+                <h1>Review Your Feedback</h1>
             </div>
         ); // end return
     } // end render
 } // end class
 
-export default Supported;
+export default Review;
