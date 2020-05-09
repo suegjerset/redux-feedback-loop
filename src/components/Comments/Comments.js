@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Review from '../Review/Review';
 
 class Comments extends Component {
 

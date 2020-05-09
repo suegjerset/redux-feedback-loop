@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import Support from '../Support/Support';
 
 class Understanding extends Component {
+
+    state = {
+        understand: ''
+    }
 
     componentDidMount() {
         console.log('in understanding', this.props);
     } 
     
+    handleChange = (event) => {
+        console.log('in handleChange', event.target.value);
+        this.setState({
+            understand: event.target.value
+        }) // end setState
+    } // end handleChange
+
     handleClick = () => {
         console.log( 'in handleClick' );
+        this.props.dispatch({ type: 'understand', payload: this.state.understand })
         this.props.history.push('/support');
     } // end handleClick
 
@@ -16,7 +27,7 @@ class Understanding extends Component {
         return (
             <div>
                 <h1>How well are you understanding the content?</h1>
-                <select name="understanding" required>
+                <select id="understand" required onChange={this.handleChange}> 
                     <option value="">--Understanding?--</option>
                     <option value="5">5</option>
                     <option value="4">4</option>

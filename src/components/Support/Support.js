@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import Comments from '../Comments/Comments';
 
 class Support extends Component {
+
+    state = {
+        support: ''
+    }
 
     componentDidMount() {
         console.log('in support', this.props);
     } 
 
+    handleChange = (event) => {
+        console.log('in handleChange', event.target.value);
+        this.setState({
+            support: event.target.value
+        }) // end setState
+    } // end handleChange
+
     handleClick = () => {
         console.log( 'in handleClick' );
+        this.props.dispatch({ type: 'support', payload: this.state.support })
         this.props.history.push( '/comments' );
     } // end handleClick
     
@@ -16,7 +27,7 @@ class Support extends Component {
         return (
             <div>
                 <h1>How well are you being supported?</h1>
-                <select name="support" required>
+                <select id="support" required onChange={this.handleChange}>
                     <option value="">--Support?--</option>
                     <option value="5">5</option>
                     <option value="4">4</option>
