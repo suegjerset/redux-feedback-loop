@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Understanding extends Component {
 
     state = {
-        understand: ''
+        value: ''
     }
 
     componentDidMount() {
@@ -13,14 +13,14 @@ class Understanding extends Component {
     handleChange = (event) => {
         console.log('in handleChange', event.target.value);
         this.setState({
-            understand: event.target.value
+            value: event.target.value
         }) // end setState
     } // end handleChange
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch({ type: 'understand', payload: this.state.understand })
-        this.props.history.push('/support');
+        this.props.dispatch({ type: 'understand', payload: this.state.value })
+        this.props.history.push( '/support' );
     } // end handleClick
 
     render() {
@@ -29,12 +29,11 @@ class Understanding extends Component {
                 <h1>How well are you understanding the content?</h1>
                 <select id="understand" required onChange={this.handleChange}> 
                     <option value="">--Understanding?--</option>
-                    <option value="5">5</option>
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
-                    <option value="0">0</option>
+                    <option value="5">5 Extremely well</option>
+                    <option value="4">4 Very well</option>
+                    <option value="3">3 Moderately well</option>
+                    <option value="2">2 Slightly well</option>
+                    <option value="1">1 Not well at all</option>
                 </select>
                 <button onClick={this.handleClick}>NEXT</button>
             </div>

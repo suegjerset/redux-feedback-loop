@@ -9,11 +9,24 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 
-const firstReducerInitialState = [];
+const firstReducerInitialState = {};
 
 // the reducer for storing TBD
-const firstReducer = (state = firstReducerInitialState, action) => {
-    console.log( 'in firstReducer', state, action);
+const firstReducer = ( state = firstReducerInitialState, action ) => {
+    console.log( 'in firstReducer', state, action.payload );
+    if (action.type === "feeling") {
+        console.log( 'feeling', action.payload );
+        return {...state, feeling: action.payload};
+    } else if (action.type === "understand") {
+        console.log( 'understand', action.payload );
+        return { ...state, understand: action.payload };
+    } else if (action.type === "support") {
+        console.log( 'support', action.payload );
+        return { ...state, support: action.payload };
+    } else if (action.type === "comments") {
+        console.log( 'comments', action.payload );
+        return { ...state, comments: action.payload };
+    }
     return state;
 } // end firstReducer
 

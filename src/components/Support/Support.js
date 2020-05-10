@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Support extends Component {
 
     state = {
-        support: ''
+        value: ''
     }
 
     componentDidMount() {
@@ -13,13 +13,13 @@ class Support extends Component {
     handleChange = (event) => {
         console.log('in handleChange', event.target.value);
         this.setState({
-            support: event.target.value
+            value: event.target.value
         }) // end setState
     } // end handleChange
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch({ type: 'support', payload: this.state.support })
+        this.props.dispatch({ type: 'support', payload: this.state.value })
         this.props.history.push( '/comments' );
     } // end handleClick
     
@@ -29,12 +29,11 @@ class Support extends Component {
                 <h1>How well are you being supported?</h1>
                 <select id="support" required onChange={this.handleChange}>
                     <option value="">--Support?--</option>
-                    <option value="5">5</option>
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                    <option value="1">1</option>
-                    <option value="0">0</option>
+                    <option value="5">5 Extremely supported</option>
+                    <option value="4">4 Very supported</option>
+                    <option value="3">3 Moderately supported</option>
+                    <option value="2">2 Slightly supported</option>
+                    <option value="1">1 Not supported</option>
                 </select>
                 <button onClick={this.handleClick}>NEXT</button>
             </div>
