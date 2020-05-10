@@ -4,6 +4,7 @@ class Review extends Component {
 
     handleClick = () => {
         console.log('in handleClick');
+        this.props.dispatch( {type: 'feedback'} ); 
         this.props.history.push('/thanks');
     } // end handleClick
 
