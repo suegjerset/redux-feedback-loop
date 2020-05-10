@@ -7,11 +7,11 @@ class Support extends Component {
     }
 
     componentDidMount() {
-        console.log('in support', this.props);
+        console.log( 'in support', this.props );
     } 
 
     handleChange = (event) => {
-        console.log('in handleChange', event.target.value);
+        console.log( 'in handleChange', event.target.value );
         this.setState({
             value: event.target.value
         }) // end setState
@@ -19,7 +19,7 @@ class Support extends Component {
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch({ type: 'support', payload: this.state.value })
+        this.props.dispatch( { type: 'support', payload: this.state.value } )
         this.props.history.push( '/comments' );
     } // end handleClick
     

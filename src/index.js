@@ -17,9 +17,9 @@ const firstReducer = ( state = firstReducerInitialState, action ) => {
     if (action.type === "feeling") {
         console.log( 'feeling', action.payload );
         return {...state, feeling: action.payload};
-    } else if (action.type === "understand") {
-        console.log( 'understand', action.payload );
-        return { ...state, understand: action.payload };
+    } else if (action.type === "understanding") {
+        console.log( 'understanding', action.payload );
+        return { ...state, understanding: action.payload };
     } else if (action.type === "support") {
         console.log( 'support', action.payload );
         return { ...state, support: action.payload };

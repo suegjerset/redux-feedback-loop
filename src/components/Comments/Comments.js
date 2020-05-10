@@ -7,11 +7,11 @@ class Comments extends Component {
     }
 
     componentDidMount() {
-        console.log('in comments', this.props);
+        console.log( 'in comments', this.props );
     } 
 
     handleChange = (event) => {
-        console.log('in handleChange', event.target.value);
+        console.log( 'in handleChange', event.target.value );
         this.setState({
             comments: event.target.value
         }) // end setState
@@ -19,7 +19,7 @@ class Comments extends Component {
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch({ type: 'comments', payload: this.state.comments })
+        this.props.dispatch({ type: 'comments', payload: this.state.comments } )
         this.props.history.push ( '/review' );
     } // end handleClick
 

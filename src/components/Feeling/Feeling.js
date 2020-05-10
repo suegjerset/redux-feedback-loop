@@ -7,7 +7,7 @@ class Feeling extends Component {
     }
 
     componentDidMount() {
-        console.log('in feeling', this.props);
+        console.log( 'in feeling', this.props );
     } 
   
     handleChange = (event) => {

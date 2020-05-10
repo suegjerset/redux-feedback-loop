@@ -7,11 +7,11 @@ class Understanding extends Component {
     }
 
     componentDidMount() {
-        console.log('in understanding', this.props);
+        console.log( 'in understanding', this.props );
     } 
     
     handleChange = (event) => {
-        console.log('in handleChange', event.target.value);
+        console.log( 'in handleChange', event.target.value );
         this.setState({
             value: event.target.value
         }) // end setState
@@ -19,7 +19,7 @@ class Understanding extends Component {
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch({ type: 'understand', payload: this.state.value })
+        this.props.dispatch( { type: 'understanding', payload: this.state.value } )
         this.props.history.push( '/support' );
     } // end handleClick
 
@@ -27,7 +27,7 @@ class Understanding extends Component {
         return (
             <div>
                 <h1>How well are you understanding the content?</h1>
-                <select id="understand" required onChange={this.handleChange}> 
+                <select id="understanding" required onChange={this.handleChange}> 
                     <option value="">--Understanding?--</option>
                     <option value="5">5 Extremely well</option>
                     <option value="4">4 Very well</option>
