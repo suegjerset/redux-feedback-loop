@@ -19,8 +19,12 @@ class Support extends Component {
 
     handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch( { type: 'support', payload: this.state.value } )
-        this.props.history.push( '/comments' );
+        if (this.state.value === '') {
+            alert('a response is required');
+        } else if (this.state.value > 0) {
+            this.props.dispatch( { type: 'support', payload: this.state.value } )
+            this.props.history.push( '/comments' );
+        }
     } // end handleClick
     
     render() {

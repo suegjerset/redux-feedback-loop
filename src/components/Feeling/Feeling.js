@@ -17,10 +17,14 @@ class Feeling extends Component {
         }) // end setState
     } // end handleChange
 
-    handleClick = () =>{
+    handleClick = () => {
         console.log( 'in handleClick' );
-        this.props.dispatch( { type: 'feeling', payload: this.state.value } )
-        this.props.history.push( '/understanding' );
+        if (this.state.value === '') {
+            alert( 'a response is required' );
+        } else if (this.state.value > 0) {
+            this.props.dispatch( { type: 'feeling', payload: this.state.value } )
+            this.props.history.push( '/understanding' );
+        }
   } // end handleClick
 
     render() {

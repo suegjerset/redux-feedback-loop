@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 
 const firstReducerInitialState = {};
 
-// the reducer for storing survey responses
+// the reducer for storing feedback responses
 const firstReducer = ( state = firstReducerInitialState, action ) => {
     console.log( 'in firstReducer', state, action.payload );
     if (action.type === "feeling") {

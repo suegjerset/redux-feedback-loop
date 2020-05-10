@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import { connect } from 'react-redux';
 import Feeling from '../Feeling/Feeling';
@@ -14,10 +13,10 @@ class App extends Component {
   componentDidMount() {
     console.log(this.props);
   } 
-
-  testRedux = () => {
-    console.log(this.props.reduxState);
-  }
+  // testing reduxState
+  // testRedux = () => {
+  //   console.log(this.props.reduxState);
+  // }
 
   render() {
     return (
@@ -25,8 +24,10 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
-          <button onClick={this.testRedux}>Test Redux</button>
+          {/* testing reduxState
+          <button onClick={this.testRedux}>Test Redux</button> */}
         </header>
+        {/* // create routers to take user to next step in multi-part form */}
         <HashRouter>
           <Route exact path='/' render={ (props) => 
             <Feeling {...props} dispatch={ this.props.dispatch } /> }/>
@@ -42,7 +43,7 @@ class App extends Component {
         </HashRouter>
       </div>
     ); // end return
-  } // end renter
+  } // end render
 } // end class
 
 const reduxStateToProps = ( reduxState ) => ( { reduxState} );

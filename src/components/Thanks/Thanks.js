@@ -10,7 +10,7 @@ class Thanks extends Component {
     render() {
         return (
             <div>
-                <h1>Thanks!</h1>
+                <h1>Thank you for your feedback!</h1>
                 <button onClick={this.handleClick}>Leave New Feedback</button>
             </div>
         ); // end return

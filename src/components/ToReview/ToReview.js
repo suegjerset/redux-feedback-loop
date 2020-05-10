@@ -14,10 +14,10 @@ class Review extends Component {
             <div>
                 <h1>Review Your Feedback</h1>
                 {/* <p>{JSON.stringify(this.props.reduxState)}</p> */}
-                <p>Feelings: {review.feeling}</p>
-                <p>Understanding: {review.understanding}</p>
-                <p>Support: {review.support}</p>
-                <p>Comments: {review.comments}</p>
+                <h4>Feeling: {review.feeling}</h4>
+                <h4>Understanding: {review.understanding}</h4>
+                <h4>Support: {review.support}</h4>
+                <h4>Comments: {review.comments}</h4>
                 <button onClick={this.handleClick}>SUBMIT</button>
             </div>
         ); // end return
